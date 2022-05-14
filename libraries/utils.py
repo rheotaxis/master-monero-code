@@ -46,7 +46,7 @@ def generate_key_derivation(public, private):
 
 def derivation_to_scalar(derivation, index):
     ## concatenate index to derivation
-    data = derivation + index
+    data = derivation + index.encode('utf-8')
     return hash_to_scalar(data)
 
 ## Alias for scalarmultbase
