@@ -10,7 +10,7 @@ def generate_stealth_address(publicViewKey, privateTxKey,  publicSpendKey, index
     
     # concatenate index to derivation then hash and reduce
     # Hs(rA|i)
-    scalar = utils.derivation_to_scalar(derivation, index)
+    scalar = utils.derivation_to_scalar(derivation, index.encode('utf-8'))
     
     # multiply by base point
     # Hs(rA|i)G
