@@ -21,20 +21,25 @@ def generate_random_address():
 
     ## the network byte, public spend key, and public view key are all concatenated together
     ## 0x12 is the Monero mainnet network byte
-    network_byte = "12"
+    network_byte = b'12'
     ## Concatenate the three strings
     data = network_byte + public_spend_key + public_view_key
     hash = utils.keccak_256(data)
     ## checksum is the first 4 bytes (8 hex characters) of the hash of the previous data
     checksum = hash[0:8]
-    address = base58.encode(data + checksum)
+    print("checksum : " + checksum)
+    address = base58.encode(data + checksum.encode('utf-8'))
     
     ## Priting the keys
     
-    print("Secret_spend_key : " + secret_spend_key)
-    print("Secret_view_key : " + secret_view_key)
-    print("Public_spend_key : " + public_spend_key)
-    print("Public_view_key : " + public_view_key)
+    print("Secret_spend_key : " + secret_spend_key.decode('utf-8'))
+    print("Secret_view_key : " + secret_view_key.decode('utf-8'))
+    print("Public_spend_key : " + public_spend_key.decode('utf-8'))
+    print("Public_view_key : " + public_view_key.decode('utf-8'))
     
     ## Returning address generated
+    print("Monero address : " + address)
     return address
+
+generate_random_address()
+
