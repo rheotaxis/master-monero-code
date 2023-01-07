@@ -41,5 +41,5 @@ def generate_random_address():
     print("Monero address : " + address)
     return address
 
-generate_random_address()
+# generate_random_address()
 
