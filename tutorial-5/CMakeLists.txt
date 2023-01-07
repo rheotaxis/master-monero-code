@@ -4,6 +4,9 @@ set(PROJECT_NAME tutorial-5)
 
 project(${PROJECT_NAME})
 
+# review this URL
+# https://stackoverflow.com/questions/36278440/understanding-ld-under-msys2
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -ldl")
 
 
@@ -55,7 +58,7 @@ include_directories(
 		${MONERO_SOURCE_DIR}/external/easylogging++
 		${MONERO_SOURCE_DIR}/contrib/epee/include
 		${MONERO_SOURCE_DIR}/version
-                ${MONERO_SOURCE_DIR}/external/db_drivers/liblmdb)
+		${MONERO_SOURCE_DIR}/external/db_drivers/liblmdb)
 
 
 # Specific source files
@@ -66,9 +69,8 @@ set(SOURCE_FILES
 add_executable(${PROJECT_NAME}
         ${SOURCE_FILES})
 
-
-set_target_properties(${PROJECT_NAME}
-        PROPERTIES LINKER_LANGUAGE CXX)
+# Set linker language
+# set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 
 set(LIBRARIES        
