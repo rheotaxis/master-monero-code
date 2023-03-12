@@ -4,17 +4,17 @@
 #include "common/base58.h"
 #include "crypto/crypto-ops.h"
 #include "crypto/hash.h"
-
+ 
 // Converts crypto::hash into crypto::secret_key or crypto::public_key
-template <typename T>
+/* template <typename T>
 T get_key_from_hash(crypto::hash & in_hash){
 	T* key;
 	key = reinterpret_cast<T*>(&in_hash);
 	return *key;
 }
-
+ */
 int main(){
-  	// Put here your private spendable key!
+/*   	// Put here your private spendable key!
 	std::string str_spend_key = "f8f2fba1da00643bbf11ffec355a808d2d8ca4e4de14a10476e116abd8dd7f02";
 	cryptonote::network_type nettype = cryptonote::MAINNET;	
 	crypto::public_key public_spend_key;
@@ -48,6 +48,6 @@ int main(){
 
 	public_address = cryptonote::get_account_address_as_str(nettype, false, address); 
 	std::cout << "Monero Address:" << public_address << std::endl;
-
+ */
 	return 0;
 }
