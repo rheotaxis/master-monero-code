@@ -19,7 +19,7 @@ message(STATUS MONERO_DIR ": ${MONERO_DIR}")
 set(MONERO_SOURCE_DIR ${MONERO_DIR} CACHE PATH "Path to the root directory for Monero")
 
 # set location of monero build tree
-set(MONERO_BUILD_DIR ${MONERO_SOURCE_DIR}/build/MINGW64_NT-10.0-19044/master/release/
+set(MONERO_BUILD_DIR ${MONERO_SOURCE_DIR}/build/MINGW64_NT-10.0-22621/_HEAD_detached_at_v0.18.2.0_/release/
         CACHE PATH "Path to the build directory for Monero")
 
 set(MY_CMAKE_DIR "${CMAKE_CURRENT_LIST_DIR}/cmake"
