@@ -64,7 +64,7 @@ add_executable(
 	${SOURCE_FILES})
 
 # Set linker language
-# set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 
 set(LIBRARIES        
@@ -84,9 +84,7 @@ set(LIBRARIES
         epee
         easylogging
         device
-        pcsclite
         sodium
-		pcsclite
         ${Boost_LIBRARIES}
         pthread
         unbound
