@@ -1,6 +1,10 @@
 .vscode
 *.pyc
 .idea/
+tutorial-5/CMakeFiles/*
+tutorial-5/cmake_install.cmake
+tutorial-5/CMakeCache.txt
+tutorial-5/Makefile
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
