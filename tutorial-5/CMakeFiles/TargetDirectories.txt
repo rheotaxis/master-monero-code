@@ -1,3 +1,0 @@
-C:/Users/rheot/Documents/monero/testRPC/master-monero-code/tutorial-5/CMakeFiles/tutorial-5.dir
-C:/Users/rheot/Documents/monero/testRPC/master-monero-code/tutorial-5/CMakeFiles/edit_cache.dir
-C:/Users/rheot/Documents/monero/testRPC/master-monero-code/tutorial-5/CMakeFiles/rebuild_cache.dir
