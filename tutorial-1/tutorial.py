@@ -6,7 +6,7 @@ import json
 # Import Setup variables
 # Url for JSON RPC interface. We assume that your RPC interface is running on localhost port 18082
 
-url = "http://localhost:18082/json_rpc"
+url = "http://localhost:28088/json_rpc"
 
 # JSON headers . Required.
 
@@ -28,8 +28,9 @@ response = requests.post(url,data=json.dumps(rpc_fields),headers=headers)
 
 # Print the response as JSON (output version 1)
 
-# print(json.dumps(response.json()))
+print(json.dumps(response.json()))
 
 # Get the balance from response array and convert to a string (output version 2)
-balance = str(response.json().get(‘result’).get(‘balance’))
+balance = str(response.json().get('result').get('balance'))
 print("Balance is " + balance + " XMR atomic units")
+

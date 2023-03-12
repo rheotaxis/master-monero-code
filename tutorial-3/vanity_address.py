@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../libraries')
+sys.path.append('../tutorial-2')
 import address
 
 if (len(sys.argv) != 2):
@@ -7,7 +7,7 @@ if (len(sys.argv) != 2):
     exit()
 
 if (sys.argv[1][0] != "4"):
-    print "Monero addresses must start with the character 4"
+    print("Monero addresses must start with the character 4")
     exit()
 
 ## create random addresses until one of them matches the desired prefix
