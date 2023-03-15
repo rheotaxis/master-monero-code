@@ -7,7 +7,7 @@ project(${PROJECT_NAME})
 # review this URL
 # https://stackoverflow.com/questions/36278440/understanding-ld-under-msys2
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -ldl")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 
 if (NOT MONERO_DIR)
