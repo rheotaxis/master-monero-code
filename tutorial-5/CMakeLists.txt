@@ -11,22 +11,28 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 
 if (NOT MONERO_DIR)
-    set(MONERO_DIR ~/github/monero)
+    set(MONERO_DIR /c/msys64/home/rheot/github/monero)
 endif()
 
 message(STATUS MONERO_DIR ": ${MONERO_DIR}")
 
 set(MONERO_SOURCE_DIR ${MONERO_DIR} CACHE PATH "Path to the root directory for Monero")
 
+message(STATUS MONERO_SOURCE_DIR ": ${MONERO_SOURCE_DIR}")
+
 # set location of monero build tree
 set(MONERO_BUILD_DIR ${MONERO_SOURCE_DIR}/build/MINGW64_NT-10.0-22621/_HEAD_detached_at_v0.18.2.0_/release/
         CACHE PATH "Path to the build directory for Monero")
+
+message(STATUS MONERO_BUILD_DIR ": ${MONERO_BUILD_DIR}")
 
 set(MY_CMAKE_DIR "${CMAKE_CURRENT_LIST_DIR}/cmake"
         CACHE PATH "The path to the cmake directory of the current project")
 
 list(APPEND CMAKE_MODULE_PATH "${MY_CMAKE_DIR}")
 set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "${MONERO_BUILD_DIR}" CACHE PATH "Add Monero directory for library searching")
+
+message(STATUS CMAKE_LIBRARY_PATH ": ${CMAKE_LIBRARY_PATH}")
 
 # find boost
 find_package(Boost COMPONENTS
@@ -101,6 +107,9 @@ set(LIBS common;blocks;cryptonote_basic;cryptonote_core;
     blockchain_db;ringct;wallet;cncrypto;easylogging;version;
     checkpoints; ringct_basic; )
 
+set(CMAKE_FIND_LIBRARY_SUFFIXES .a)
+set(CMAKE_FIND_LIBRARY_PREFIXES lib)
+
 foreach (l ${LIBS})
 	string(TOUPPER ${l} L)
 	find_library(Xmr_${L}_LIBRARY
@@ -108,6 +117,7 @@ foreach (l ${LIBS})
 		PATHS ${CMAKE_LIBRARY_PATH}
 		PATH_SUFFIXES "/src/${l}" "/src/ringct" "/src/" "/external/db_drivers/lib${l}" "/lib" "/src/crypto" "/contrib/epee/src" "/external/easylogging++/"
 		NO_DEFAULT_PATH
+		REQUIRED
 	)
 	set(Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY})
 	message(STATUS " Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY}")
