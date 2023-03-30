@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.25)
 
 set(PROJECT_NAME tutorial-5)
 
@@ -116,7 +116,6 @@ foreach (l ${LIBS})
 		NAMES ${l}
 		PATHS ${CMAKE_LIBRARY_PATH}
 		PATH_SUFFIXES "/src/${l}" "/src/ringct" "/src/" "/external/db_drivers/lib${l}" "/lib" "/src/crypto" "/contrib/epee/src" "/external/easylogging++/"
-		NO_DEFAULT_PATH
 		REQUIRED
 	)
 	set(Xmr_${L}_LIBRARIES ${Xmr_${L}_LIBRARY})
