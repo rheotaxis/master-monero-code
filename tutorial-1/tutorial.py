@@ -6,7 +6,7 @@ import json
 # Import Setup variables
 # Url for JSON RPC interface. We assume that your RPC interface is running on localhost port 18082
 
-url = "http://localhost:28088/json_rpc"
+url = "http://localhost:28082/json_rpc"
 
 # JSON headers . Required.
 
